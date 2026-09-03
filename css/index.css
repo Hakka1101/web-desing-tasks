@@ -3,10 +3,170 @@
 /* #region 専用ブロック - Hero */
 
 .hero__img {
-	display: block;
-	width: 100%;
-	aspect-ratio: 89 / 42;
-	object-fit: cover;
+  display: block;
+  width: 100%;
+  aspect-ratio: 89 / 42;
+  object-fit: cover;
+}
+
+/* #endregion */
+
+/* #region 専用ブロック - Intro */
+
+.intro {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-pale);
+}
+
+.intro__img {
+  display: block;
+  width: 70%;
+  aspect-ratio: 3 / 2;
+  margin: 24px auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.intro__inner {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.intro__title {
+  font-size: clamp(1.2rem, 1.09rem + 0.55vw, 1.8rem); /* 実測24px */
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  text-decoration: underline dashed var(--color-accent);
+  text-underline-offset: 0.3em;
+}
+
+.intro__text {
+  margin-top: 16px;
+  font-size: 1.2rem;
+  line-height: 1.9;
+}
+
+.intro__btn {
+  display: block;
+  width:fit-content;
+  margin-top: 24px;
+  margin-left: auto;
+  background-color: var(--color-white);
+}
+
+@media (min-width: 1000px) {
+  .intro__img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    aspect-ratio: auto;
+    margin: 0;
+    border-radius: 0;
+    -webkit-mask-image: linear-gradient(to right, #000 70%, transparent 90%);
+    mask-image: linear-gradient(to right, #000 70%, transparent 90%);
+  }
+
+  .intro__inner {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .intro__left {
+    flex: 1;
+  }
+
+  .intro__body {
+    flex: 2;
+  }
+}
+
+/* #endregion */
+
+/* #region 専用ブロック - Treatment */
+
+.treatment {
+  position: relative;
+  align-items: center;
+  padding: 32px;
+  background-image: url(../images/about-treatment.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.treatment__inner {
+  width: 79%;
+  margin: auto;
+  padding: 40px 48px;
+  background-color: var(--color-overlay);
+}
+
+.treatment__title {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 24px;
+  background-color: var(--color-primary);
+  font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem); /* 実測28px */
+  font-weight: 700;
+  color: var(--color-white);
+  opacity: 1;
+}
+
+.treatment__text {
+  margin-top: 16px;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 1;
+}
+
+.treatment__note {
+  display: block;
+  margin-top: 16px;
+  font-size: 14px;
+  opacity: 1;
+}
+
+@media (min-width: 1000px) {
+}
+
+/* #endregion */
+
+/* #region 専用ブロック - Effects */
+
+/*
+  半円タイトル（.sec-title）はセクション上端に密着させるため、
+  セクション側に padding-top を持たせない（下端側のみ余白を取る）。
+*/
+.effects {
+  padding-bottom: 56px;
+  background-color: var(--color-pale);
+}
+
+/* #endregion */
+
+/* #region 専用ブロック - Treatment select */
+
+.treatment-select {
+  padding-bottom: 56px;
+  background-color: var(--color-pale-light);
+}
+
+/* #endregion */
+
+/* #region 専用ブロック - Flow */
+
+.flow {
+  padding-bottom: 56px;
+  background-color: var(--color-pale);
 }
 
 /* #endregion */

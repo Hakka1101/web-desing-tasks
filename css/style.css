@@ -65,6 +65,58 @@ a {
   color: var(--color-primary);
 }
 
+/*
+  セクションタイトル（半円）
+  TOP.pdf実測: 直径505px・高さ252pxの「円の下半分」がセクション上端に密着し、
+  中にアイコン+タイトル+緑の破線が入る。effects / treatment-select / flow の3箇所で共通。
+  半円は border-radius の「横50% / 縦100%」指定で数学的に正確に描ける（SVG不要）。
+*/
+.sec-title {
+  width: 90%; /* 狭い画面でも画面幅いっぱいにはせず、少し内側に収める */
+  aspect-ratio: 2 / 1; /* 全ブレイクポイント共通。2:1 以外にすると半円ではなく半楕円になる */
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 24px; /* 円が小さい分、文字を弧の広い位置（上寄り）に置く */
+  padding-bottom: 24px;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.sec-title__icon {
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.sec-title__text {
+  display: inline-block;
+  margin-top: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px dashed var(--color-accent);
+  font-size: clamp(1rem, 0.85rem + 0.75vw, 1.5rem); /* 実測24px（字面高さ実測22pxから逆算） */
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+@media (min-width: 600px) {
+  .sec-title {
+    width: 505px; /* 実測: 直径505px・高さ252px */
+    padding-top: 50px; /* 実測: セクション上端からアイコン上端まで50px */
+  }
+
+  .sec-title__icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .sec-title__text {
+    margin-top: 22px;
+  }
+}
+
 /* #endregion */
 
 /* #region ヘッダー */

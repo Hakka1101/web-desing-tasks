@@ -8,10 +8,13 @@
 	/* --- color --- */
 	--color-primary: #337D98; /* ロゴ・ヘッダーnav文字/アイコン・ヘッダーCTA背景・フッター下段背景 */
 	--color-primary-light: #4D9AB8; /* フッター中段nav背景・フッターボタン文字/枠線 */
-	--color-pale: #CFEAF3; /* フッター上段背景 */
+	--color-pale: #CFEAF3; /* フッター上段背景・effects/flowセクション背景 */
+	--color-pale-light: #E0F3FA; /* treatment-selectセクション背景（--color-paleより一段淡い水色。TOP.pdf実測） */
 	--color-white: #FFFFFF;
 	--color-text: #333333; /* 本文テキスト（下層ページ含む） */
 	--color-divider: #A6C0CC; /* ヘッダーnav間の破線区切り */
+	--color-accent: #4DB57C; /* intro見出しの破線下線（TOP.pdf実測、300dpiラスタライズ後にピクセルサンプリング） */
+	--color-overlay: rgba(207, 234, 243, .7); /* about-treatmentセクション、写真上のテキストパネル背景(--color-paleの半透明版) */
 
 	/* --- font --- */
 	--font-main: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;

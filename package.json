@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:css:fix": "stylelint \"**/*.css\" --fix"
+  },
+  "devDependencies": {
+    "stylelint": "^17.14.1",
+    "stylelint-order": "^8.1.1"
+  }
+}

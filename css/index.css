@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+/* #region 専用ブロック - Hero */
+
+.hero__img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 89 / 42;
+	object-fit: cover;
+}
+
+/* #endregion */

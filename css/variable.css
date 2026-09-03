@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+/*
+  色・フォントの変数のみここに定義する（フォントサイズ・余白は変数化しない）。
+  値は見本PDF（TOP.pdf）を画面上で拡大しての目視確認・実測による。
+*/
+:root {
+	/* --- color --- */
+	--color-primary: #337D98; /* ロゴ・ヘッダーnav文字/アイコン・ヘッダーCTA背景・フッター下段背景 */
+	--color-primary-light: #4D9AB8; /* フッター中段nav背景・フッターボタン文字/枠線 */
+	--color-pale: #CFEAF3; /* フッター上段背景 */
+	--color-white: #FFFFFF;
+	--color-text: #333333; /* 本文テキスト（下層ページ含む） */
+	--color-divider: #A6C0CC; /* ヘッダーnav間の破線区切り */
+
+	/* --- font --- */
+	--font-main: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}

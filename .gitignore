@@ -1,0 +1,15 @@
+# 見本PDF類（納品物には含めない）
+*.pdf
+
+# 素材画像一式（整理してから追加する）
+/images/
+
+/docs/
+
+*.md
+
+.DS_Store
+desktop.ini
+Thumbs.db
+
+/node_modules/

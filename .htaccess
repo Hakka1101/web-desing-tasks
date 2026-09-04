@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# www → wwwなし へリダイレクト
+RewriteCond %{HTTP_HOST} ^www\.example\.com$ [NC]
+RewriteRule ^(.*)$ https://example.com/$1 [L,R=301]
+
+# http → https へリダイレクト
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# .git フォルダへのアクセス拒否
+RedirectMatch 404 ^/\.git
+
+# .gitignore ファイルへのアクセス拒否
+<Files ".gitignore">
+    Require all denied
+</Files>

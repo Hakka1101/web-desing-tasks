@@ -14,7 +14,8 @@
 	--color-text: #333333; /* 本文テキスト（下層ページ含む） */
 	--color-divider: #A6C0CC; /* ヘッダーnav間の破線区切り */
 	--color-accent: #4DB57C; /* intro見出しの破線下線（TOP.pdf実測、300dpiラスタライズ後にピクセルサンプリング） */
-	--color-overlay: rgba(207, 234, 243, .7); /* about-treatmentセクション、写真上のテキストパネル背景(--color-paleの半透明版) */
+	--color-overlay: rgba(207, 234, 243, 0.7); /* about-treatmentセクション、写真上のテキストパネル背景(--color-paleの半透明版) */
+	--color-shadow:rgba(50, 120, 150, 0.2);
 
 	/* --- font --- */
 	--font-main: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;

@@ -36,7 +36,7 @@
 .intro__title {
   font-size: clamp(1.2rem, 1.09rem + 0.55vw, 1.8rem); /* 実測24px */
   font-weight: 700;
-  line-height: 1.6;
+  line-height: 1.7;
   letter-spacing: 0.1em;
   text-decoration: underline dashed var(--color-accent);
   text-underline-offset: 0.3em;
@@ -50,7 +50,7 @@
 
 .intro__btn {
   display: block;
-  width:fit-content;
+  width: fit-content;
   margin-top: 24px;
   margin-left: auto;
   background-color: var(--color-white);
@@ -123,7 +123,7 @@
 
 .treatment__text {
   margin-top: 16px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   opacity: 1;
 }
@@ -132,32 +132,194 @@
   display: block;
   margin-top: 16px;
   font-size: 14px;
+   line-height: 1.7;
   opacity: 1;
 }
 
 @media (min-width: 1000px) {
+  .treatment__inner {
+    width: 70%;
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 48px;
+    background-color: var(--color-overlay);
+  }
 }
 
 /* #endregion */
 
 /* #region 専用ブロック - Effects */
 
-/*
-  半円タイトル（.sec-title）はセクション上端に密着させるため、
-  セクション側に padding-top を持たせない（下端側のみ余白を取る）。
-*/
 .effects {
   padding-bottom: 56px;
   background-color: var(--color-pale);
 }
 
+.effects__card-wrap {
+  display: grid;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 24px;
+}
+
+.effects__card {
+  width: 100%;
+  max-width: 495px;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 16px var(--color-shadow);
+}
+
+.effects__card-img {
+  position: relative;
+  aspect-ratio: 41 / 31; /* 実測410×310 */
+}
+
+.effects__card-img img {
+  height: 100%;
+}
+
+/* 葉の装飾アイコンは疑似要素で実装（レイアウトに参加しない独立した装飾のため） */
+.effects__card-img::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  bottom: -50px;
+  width: 90px;
+  height: 70px;
+  background-image: url(../images/icon25.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.effects__card-title {
+  display: block;
+  width: fit-content;
+  margin: 24px auto 0;
+  padding-top: 24px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--color-primary-light);
+  font-size: clamp(1.2rem, 1.09rem + 0.55vw, 1.5rem); /* 実測24px（.wrap_inner基準 W=1200） */
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.effects__card-body p {
+  margin-top: 24px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 600px) {
+  .effects__card-wrap {
+    /* 半円タイトル(.sec-title)の円形ボックスにカード上端が実測で重なるため、負のmarginで再現（.flowと同種の重なり） */
+    margin-top: -60px;
+  }
+}
+
 /* #endregion */
 
-/* #region 専用ブロック - Treatment select */
+/* #region 専用ブロック - Select */
 
-.treatment-select {
+.select {
   padding-bottom: 56px;
   background-color: var(--color-pale-light);
+}
+
+.select__inner {
+  padding-top: 24px;
+}
+
+@media (min-width: 600px) {
+  .select__inner {
+    margin-top: -60px; /* 半円タイトル(.sec-title)の下端にカードを重ねる。.effectsと同種の重なり */
+  }
+}
+
+/* カードは常に縦積み（PDFは1366px幅の表示でも2カード横並びにはならない） */
+.select__card {
+  overflow: hidden;
+  border: 1px solid var(--color-primary-light);
+  background-color: var(--color-pale);
+}
+
+.select__card + .select__card {
+  margin-top: 32px; 
+}
+
+.select__card-title {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  background-color: var(--color-primary-light);
+  font-size: clamp(1.2rem, 1.09rem + 0.55vw, 1.5rem); /* 実測24px。sec-title等と同じ比率を仮採用 */
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.select__card-img {
+  aspect-ratio: 1 / 1;
+}
+
+.select__card-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.select__card-body {
+  padding: 24px 32px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.select__card-body address {
+  margin-top: 2em;
+  font-style: normal;
+}
+
+.select__note {
+  display: block;
+  width: fit-content;
+  margin: 48px auto 0; /* 実測。widthをfit-contentにして中央寄せ */
+  padding-bottom: 8px;
+  border-bottom: 2px dashed var(--color-accent);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.select__inner button {
+  display: block;
+  width: fit-content;
+  margin: 40px auto 0;
+}
+
+@media (min-width: 1000px) {
+  /* カード内を画像左・テキスト右の横並びに（タイトルバーのみ全幅） */
+  .select__card {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .select__card-title {
+    flex: 0 0 100%;
+  }
+
+  .select__card-img {
+    flex: 0 0 28%; /* 実測 */
+    aspect-ratio: auto;
+  }
+
+  .select__card-body {
+    flex: 1;
+    min-height: 300px; /* カード1本文(8行×line-height 1.8×font-size 1.1rem=253px+padding48px)を下限にして、カード2側もこの高さまで伸ばして揃える。本文の行数やfont-sizeを変えたら要再計算 */
+  }
 }
 
 /* #endregion */

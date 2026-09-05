@@ -243,7 +243,7 @@
 
 @media (min-width: 600px) {
   .select__inner {
-    margin-top: -70px; /* 半円タイトル(.sec-title)の下端にカードを重ねる。.effectsと同種の重なり */
+    margin-top: -60px; /* 半円タイトル(.sec-title)の下端にカードを重ねる。.effectsと同種の重なり */
   }
 }
 
@@ -295,12 +295,12 @@
   width: fit-content;
   margin: 48px auto 0; /* 実測。widthをfit-contentにして中央寄せ */
   padding-bottom: 8px;
-  text-decoration: underline dashed var(--color-accent);
   font-size: 1.2rem;
   font-weight: 700;
-  text-underline-offset: 0.3em;
   line-height: 1.6;
+  text-decoration: underline dashed var(--color-accent);
   color: var(--color-primary);
+  text-underline-offset: 0.3em;
 }
 
 .select__inner button {

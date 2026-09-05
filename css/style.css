@@ -87,7 +87,7 @@ img {
   aspect-ratio: 2 / 1; /*2:1 以外にすると半円ではなく半楕円になる */
   margin-right: auto;
   margin-left: auto;
-  padding-top: 24px;
+  padding-top: 18px;
   padding-bottom: 24px;
   border-radius: 0 0 50% 50% / 0 0 100% 100%;
   background-color: var(--color-white);
@@ -124,7 +124,7 @@ section:has(> .sec-title) {
 @media (min-width: 600px) {
   .sec-title {
     width: 500px;
-    padding-top: 50px;
+    padding-top: 38px;
   }
 
   .sec-title__icon {
@@ -135,6 +135,33 @@ section:has(> .sec-title) {
   .sec-title__text {
     margin-top: 22px;
   }
+}
+
+/*
+  下層ページ共通の見出し帯（アイコン+タイトル）
+  TOP以外の全ページで.page-headerとして共通使用
+*/
+.page-header {
+  padding-top: 34px;
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--color-primary-light);
+  background-color: var(--color-pale-light);
+  text-align: center;
+}
+
+.page-header__icon {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.page-header__title {
+  margin-top: 12px;
+  font-size: clamp(1.25rem, 1.14rem + 0.55vw, 1.6rem); /* 実測26px */
+  font-weight: 700;
+  color: var(--color-primary-light);
 }
 
 /*
@@ -153,7 +180,7 @@ section:has(> .sec-title) {
 @media (min-width: 600px) {
   .flow__inner {
     /* 半円タイトル(.sec-title)の下端に1枚目カードが重なる。.effects/.selectと同種の重なり */
-    margin-top: -70px;
+    margin-top: -60px;
   }
 }
 

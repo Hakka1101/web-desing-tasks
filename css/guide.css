@@ -1,1 +1,23 @@
 @charset "UTF-8";
+
+/*
+	guide.html（ご利用案内）専用スタイル
+*/
+
+/* #region 専用ブロック - Lead */
+
+.lead {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-primary-light);
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.lead p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-primary-light);
+}
+
+/* #endregion */

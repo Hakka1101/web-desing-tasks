@@ -21,8 +21,8 @@ a {
 }
 
 img {
-  object-fit: cover;
   width: 100%;
+  object-fit: cover;
 }
 
 .sq__br {
@@ -57,7 +57,7 @@ img {
 .btn--outline {
   padding: 14px 40px;
   border: 2px solid var(--color-primary);
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--color-primary);
 }
 
@@ -101,8 +101,8 @@ section:has(> .sec-title) {
 
 .sec-title__icon {
   display: block;
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   margin: 0 auto;
   object-fit: contain;
 }
@@ -115,7 +115,7 @@ section:has(> .sec-title) {
   font-size: clamp(
     1rem,
     0.85rem + 0.75vw,
-    1.5rem
+    1.8rem
   ); /* 実測24px（字面高さ実測22pxから逆算） */
   font-weight: 700;
   color: var(--color-primary);
@@ -128,13 +128,102 @@ section:has(> .sec-title) {
   }
 
   .sec-title__icon {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
   }
 
   .sec-title__text {
     margin-top: 22px;
   }
+}
+
+/*
+  ご利用の流れ（.flow）
+  index.html / guide.html で共通使用。.sec-title の半円下端に1枚目カードが重なる構成
+*/
+.flow {
+  padding-bottom: 56px;
+  background-color: var(--color-pale);
+}
+
+.flow__inner {
+  margin-top: -40px;
+}
+
+@media (min-width: 600px) {
+  .flow__inner {
+    /* 半円タイトル(.sec-title)の下端に1枚目カードが重なる。.effects/.selectと同種の重なり */
+    margin-top: -70px;
+  }
+}
+
+.flow__card {
+  max-width: 480px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 28px 24px;
+  border-radius: 16px;
+  background-color: var(--color-white);
+  box-shadow: 0 0 8px var(--color-shadow);
+  text-align: center;
+}
+
+.triangle--tobottom + .flow__card {
+  margin-top: 24px;
+}
+
+.flow-card-num {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--color-primary-light);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 35px;
+  color: var(--color-white);
+}
+
+.flow__card h3 {
+  margin-top: 12px;
+  font-size: clamp(1.3rem, 1.14rem + 0.85vw, 2.1rem); /* 実測30px */
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+
+.flow__card p {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* 「無料体験」のみ強調。書体はfont-mainのまま、太さ・サイズ・グラデーションで差別化 */
+/* h3を重ねて詳細度を.flow__card h3より上げ、color指定を確実に上書きする */
+.flow__card h3.flow__card-hightlight {
+  background: linear-gradient(0deg, #2e8b57, #7ed6a5);
+  font-size: clamp(2.4rem, 1.9rem + 2.4vw, 4rem); /* 実測48pxだが強調のため意図的に拡大 */
+  font-weight: 900;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ダウン矢印。border-trickで三角形を作る（参考: https://bagelee.com/design/css/css-triangle/） */
+.triangle--tobottom {
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 24px auto 0;
+  border-width: 20px 18px 0 18px;
+  border-style: solid;
+  border-color: var(--color-primary-light) transparent transparent transparent;
+}
+
+.flow__btn {
+  display: block;
+  width: fit-content;
+  margin: 56px auto 0;
+  background-color: var(--color-white);
 }
 
 /* #endregion */
@@ -148,6 +237,7 @@ section:has(> .sec-title) {
   z-index: 100;
   width: 100%;
   background-color: var(--color-white);
+  box-shadow: 0 -4px 7px var(--color-shadow);
 }
 
 .header__inner {
@@ -466,28 +556,28 @@ section:has(> .sec-title) {
     justify-content: space-between;
     gap: 8px 0;
   }
-}
 
-.footer__bottom-inner {
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  padding-top: 56px;
-  padding-bottom: 56px;
-  text-align: left;
-}
+  .footer__bottom-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding-top: 56px;
+    padding-bottom: 56px;
+    text-align: left;
+  }
 
-.footer__info {
-  text-align: left;
-}
+  .footer__info {
+    text-align: left;
+  }
 
-.footer__logo {
-  justify-content: flex-start;
-}
+  .footer__logo {
+    justify-content: flex-start;
+  }
 
-.footer__tel {
-  text-align: center;
+  .footer__tel {
+    text-align: center;
+  }
 }
 
 /* #endregion */

@@ -95,7 +95,7 @@
 .treatment {
   position: relative;
   align-items: center;
-  padding: 32px;
+  padding: 56px 0px;
   background-image: url(../images/about-treatment.jpg);
   background-position: center;
   background-size: cover;
@@ -157,16 +157,16 @@
 
 .effects__card-wrap {
   display: grid;
-  flex-wrap: wrap;
   justify-content: center;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  margin-top: 24px;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: -40px;
 }
 
 .effects__card {
+  box-sizing: border-box; /* articleタグはreset.cssのbox-sizing対象外のため、width+paddingの併用時はここで明示指定する */
   width: 100%;
-  max-width: 495px;
+  max-width: 550px;
   padding: 40px;
   border-radius: 20px;
   background-color: var(--color-white);
@@ -210,7 +210,7 @@
 
 .effects__card-body p {
   margin-top: 24px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
 }
 
@@ -218,6 +218,13 @@
   .effects__card-wrap {
     /* 半円タイトル(.sec-title)の円形ボックスにカード上端が実測で重なるため、負のmarginで再現（.flowと同種の重なり） */
     margin-top: -60px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .effects__card-wrap {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
   }
 }
 
@@ -231,12 +238,12 @@
 }
 
 .select__inner {
-  padding-top: 24px;
+  margin-top: -40px;
 }
 
 @media (min-width: 600px) {
   .select__inner {
-    margin-top: -60px; /* 半円タイトル(.sec-title)の下端にカードを重ねる。.effectsと同種の重なり */
+    margin-top: -70px; /* 半円タイトル(.sec-title)の下端にカードを重ねる。.effectsと同種の重なり */
   }
 }
 
@@ -255,7 +262,7 @@
   padding-top: 13px;
   padding-bottom: 13px;
   background-color: var(--color-primary-light);
-  font-size: clamp(1.2rem, 1.09rem + 0.55vw, 1.5rem); /* 実測24px。sec-title等と同じ比率を仮採用 */
+  font-size: clamp(1.2rem, 1.09rem + 0.55vw, 1.8rem); /* 実測24px。sec-title等と同じ比率を仮採用 */
   font-weight: 700;
   text-align: center;
   color: var(--color-white);
@@ -288,9 +295,11 @@
   width: fit-content;
   margin: 48px auto 0; /* 実測。widthをfit-contentにして中央寄せ */
   padding-bottom: 8px;
-  border-bottom: 2px dashed var(--color-accent);
+  text-decoration: underline dashed var(--color-accent);
   font-size: 1.2rem;
   font-weight: 700;
+  text-underline-offset: 0.3em;
+  line-height: 1.6;
   color: var(--color-primary);
 }
 
@@ -298,6 +307,7 @@
   display: block;
   width: fit-content;
   margin: 40px auto 0;
+  background-color: #fff;
 }
 
 @media (min-width: 1000px) {
@@ -320,15 +330,6 @@
     flex: 1;
     min-height: 300px; /* カード1本文(8行×line-height 1.8×font-size 1.1rem=253px+padding48px)を下限にして、カード2側もこの高さまで伸ばして揃える。本文の行数やfont-sizeを変えたら要再計算 */
   }
-}
-
-/* #endregion */
-
-/* #region 専用ブロック - Flow */
-
-.flow {
-  padding-bottom: 56px;
-  background-color: var(--color-pale);
 }
 
 /* #endregion */

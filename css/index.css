@@ -118,22 +118,19 @@
   font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem); /* 実測28px */
   font-weight: 700;
   color: var(--color-white);
-  opacity: 1;
 }
 
 .treatment__text {
   margin-top: 16px;
   font-size: 1.1rem;
   line-height: 1.6;
-  opacity: 1;
 }
 
 .treatment__note {
   display: block;
   margin-top: 16px;
   font-size: 14px;
-   line-height: 1.7;
-  opacity: 1;
+  line-height: 1.7;
 }
 
 @media (min-width: 1000px) {
@@ -307,7 +304,7 @@
   display: block;
   width: fit-content;
   margin: 40px auto 0;
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
 @media (min-width: 1000px) {

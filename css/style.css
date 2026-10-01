@@ -25,6 +25,16 @@ img {
   object-fit: cover;
 }
 
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
 .sq__br {
   display: none;
 
@@ -34,15 +44,13 @@ img {
 }
 
 .wrap {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
+  width: min(1400px, 100% - 40px);
+  margin-inline: auto;
 }
 
 .wrap_inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  width: min(1200px, 100% - 40px);
+  margin-inline: auto;
 }
 
 .btn {
@@ -207,7 +215,7 @@ section:has(> .sec-title) {
   background-color: var(--color-primary-light);
   font-size: 1.2rem;
   font-weight: 700;
-  line-height: 35px;
+  line-height: 1.8; /* 35px ÷ 19.2px(1.2rem)。円の高さに合わせた数値中央寄せのため単位なしに変換 */
   color: var(--color-white);
 }
 
@@ -504,7 +512,7 @@ section:has(> .sec-title) {
 }
 
 .footer__bottom {
-  border-top: 1px solid #fff;
+  border-top: 1px solid var(--color-white);
   background-color: var(--color-primary);
   color: var(--color-white);
 }
